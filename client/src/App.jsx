@@ -13,6 +13,9 @@ import {LineButton} from "./libraries/Web-Legos/components/Buttons"
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
+import Navigator, { navigatorWidth } from './components/Navigator';
+import HomePage from './routes/HomePage';
+import { lavender600, orange200 } from './libraries/Web-Legos/api/colors';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -28,6 +31,9 @@ authenticationManager.initialize();
 const analyticsManager = new AnalyticsManager(firebaseConfig)
 analyticsManager.initialize();
 
+export const orangeDark = "#E34E29"
+export const orangelight = "#FE541B"
+
 export function App(props) {
 
   /** Whether this is a testing environment */
@@ -37,11 +43,11 @@ export function App(props) {
   function AppContextProvider(props) {
     return (
       <AuthenticationManager.Context.Provider value={{AuthenticationManager}} >
-      <AnalyticsManager.Provider.Context.Provider value={{analyticsManager}} >
+      <AnalyticsManager.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
         {props.children}
       </TestingContext.Provider>
-      </AnalyticsManager.Provider.Context.Provider>
+      </AnalyticsManager.Context.Provider>
       </AuthenticationManager.Context.Provider >
     )
   }
@@ -58,23 +64,30 @@ export function App(props) {
 
   // Return the app
   return (
-    <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
-      { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
-      <Router>
-        <div className="app-content">
-            <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh", width: "100vw"}}>
-              <img src={powerBrick} alt="power-brick" data-testid="lego-brick" />
-              <Text h1 data-testid="title-text">BP-10700</Text>
-            </section>
-          {/** Place Navigation Here */}
-            <Routes>
-              {/** Place Routes Here */}
-            </Routes>
-          {/** Place Footer Here */}
-          <LineButton />
-        </div>
-      </Router>
-    </div>
+    <AppContextProvider>
+      <div 
+        className="App d-flex flex-column align-items-center w-100" 
+        data-testid="app"
+        style={{
+          "--backgroundColor": "#FAFAFA",
+          "--orangeDark": "#d2afff",
+          "--orangePrimary": lavender600,
+          "--textBg": "#e6d7ff",
+        }}
+      >
+        { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
+        <Router>
+          <div className="app-content w-100 d-flex flex-row align-items-center justify-content-center h-100" style={{background:"linear-gradient(90deg, var(--orangeDark), var(--orangePrimary))"}}>
+            <div className="navigator-container" style={{width: navigatorWidth,}}>
+              <Navigator />
+            </div>
+            <div className="d-flex flex-row align-items-center justify-content-end" style={{background: "white"}}>
+              <HomePage />
+            </div>
+          </div>
+        </Router>
+      </div>
+    </AppContextProvider>
   );
 }
 
