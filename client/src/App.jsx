@@ -7,6 +7,8 @@ import powerBrick from "./assets/images/power-brick.gif";
 import { Text } from '@nextui-org/react';
 import { createContext } from 'react';
 
+import {LineButton} from "./libraries/Web-Legos/components/Buttons"
+
 // API Imports
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
@@ -69,6 +71,7 @@ export function App(props) {
               {/** Place Routes Here */}
             </Routes>
           {/** Place Footer Here */}
+          <LineButton />
         </div>
       </Router>
     </div>
