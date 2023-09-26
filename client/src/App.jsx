@@ -24,6 +24,7 @@ authenticationManager.initialize();
 
 /** Site AnalyticsManager */
 const analyticsManager = new AnalyticsManager(firebaseConfig)
+analyticsManager.initialize();
 
 export function App(props) {
 
