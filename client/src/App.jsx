@@ -31,9 +31,6 @@ authenticationManager.initialize();
 const analyticsManager = new AnalyticsManager(firebaseConfig)
 analyticsManager.initialize();
 
-export const orangeDark = "#E34E29"
-export const orangelight = "#FE541B"
-
 export function App(props) {
 
   /** Whether this is a testing environment */
@@ -70,15 +67,18 @@ export function App(props) {
         data-testid="app"
         style={{
           "--backgroundColor": "#FAFAFA",
-          "--orangeDark": "#d2afff",
+          "--orangeDark": `${lavender600}aa`,
           "--orangePrimary": lavender600,
-          "--textBg": "#e6d7ff",
+          "--textBg": `${lavender600}33`,
         }}
       >
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
-          <div className="app-content w-100 d-flex flex-row align-items-center justify-content-center h-100" style={{background:"linear-gradient(90deg, var(--orangeDark), var(--orangePrimary))"}}>
-            <div className="navigator-container" style={{width: navigatorWidth,}}>
+          <div className="app-content w-100 d-flex flex-row align-items-center justify-content-center h-100" style={{
+            background:"linear-gradient(90deg, var(--orangeDark), var(--orangePrimary))",
+            "--navWidth": navigatorWidth,
+          }}>
+            <div className="navigator-container d-none d-lg-flex">
               <Navigator />
             </div>
             <div className="d-flex flex-row align-items-center justify-content-end" style={{background: "white"}}>

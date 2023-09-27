@@ -16,7 +16,7 @@ export const navigatorWidth = "330px"
 export default function Navigator() {
   return (
     <nav className="d-flex flex-column align-items-center justify-content-center" style={{width: navigatorWidth, height: "100vh", position:"relative"}}>
-      <div className="d-flex flex-column align-items-center justify-content-center" style={{position: "fixed", zIndex: 2, top: "25%", left: "3.3%"}}>
+      <div className="d-flex flex-column align-items-center justify-content-center h-100" style={{width: navigatorWidth, position: "fixed", zIndex: 2, top: 0, left: 0}}>
         <div className="w-100 d-flex flex-row align-items-center justify-content-center">
           <img src={image} alt="nicole" className="nav-headshot"/>
         </div>

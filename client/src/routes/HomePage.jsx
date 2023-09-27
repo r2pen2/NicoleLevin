@@ -18,6 +18,8 @@ import HandymanTwoToneIcon from '@mui/icons-material/HandymanTwoTone';
 import SpaTwoToneIcon from '@mui/icons-material/SpaTwoTone';
 import { navigatorWidth } from '../components/Navigator'
 
+const enableIcons = false;
+
 const iconProps = {
   style: {
     color: lavender600,
@@ -35,10 +37,7 @@ const sections = {
 
 const sectionsIcons = {
   HOME: <HomeTwoToneIcon {...iconProps} />,
-  OT: <PsychologyTwoToneIcon style={{
-    color: "fefefe",
-    fontSize: "3rem",
-  }} />,
+  OT: <PsychologyTwoToneIcon {...iconProps} />,
   YOGA: <SelfImprovementTwoToneIcon {...iconProps} />,
   WORKSHOPS: <HandymanTwoToneIcon {...iconProps} />,
 }
@@ -48,7 +47,7 @@ export default function HomePage() {
   const TextPlatform = (props) => (
     <div className="py-2">
       <div className="text-platform">
-        <WLText size="large" indent align={props.center ? "center" : "left"}>
+        <WLText indent align={props.center ? "center" : "left"}>
           {props.children}
         </WLText>
       </div>
@@ -59,7 +58,7 @@ export default function HomePage() {
     
     const SectionIcon = ({icon}) => (
       <div style={{position: "absolute", top: "5%", right: "5%"}}>
-        {icon}
+        {enableIcons && icon}
       </div>
     )
     
@@ -80,7 +79,7 @@ export default function HomePage() {
     )
 
     return (
-      <section id={props.id} className={"w-100 d-flex flex-column align-items-start justify-content-start " + props.className} style={{height: "100vh", position:"relative"}}>
+      <section id={props.id} className={"w-100 d-flex flex-column align-items-start justify-content-start " + props.className} style={{minHeight: "100vh", position:"relative"}}>
         <div className="h-100 w-100" style={props.containerStyle}>
           {props.children}
         </div>
@@ -93,14 +92,14 @@ export default function HomePage() {
 
   const SectionHeader = (props) => {
 
-    const headerFontSize = "4rem"
+    const headerFontSize = null
 
     return (
       <div className={"d-flex flex-column align-items-center justify-content-center " + props.className}>
         <hgroup className="d-flex flex-row justify-content-center align-items-center">
-          <Text h1 className="d-inline" style={{fontSize: headerFontSize}}>
+          <Text h1 className="d-inline" style={{fontSize: props.fontSize ? props.fontSize : headerFontSize}}>
             {props.standard}
-            <Text h1 color={lavender600} className="d-inline" style={{marginLeft: ".5rem", fontSize: headerFontSize}}>
+            <Text h1 color={lavender600} className="d-inline" style={{marginLeft: ".5rem", fontSize: props.fontSize ? props.fontSize : headerFontSize}}>
               {props.highlighted}
             </Text>
           </Text>
@@ -144,17 +143,15 @@ export default function HomePage() {
     return (
       <HomePageSection id={sections.HOME} icon={sectionsIcons.HOME} next={sections.OT} className="home-container">
         <div className="container py-5" style={{padding: 0}}>
-          <div className="row w-100 align-items-center justify-content-center d-flex flex-row">
-            <div className="col-12 d-flex flex-column align-items-center justify-content-center">
-              <SectionHeader standard="Nicole" highlighted="Levin"/>
+          <div className="row align-items-center justify-content-center d-flex flex-row">
+            <div className="col-12 px-2 px-md-5 d-flex flex-column align-items-center justify-content-center">
+              <SectionHeader standard="Nicole" highlighted="Levin" fontSize="4rem"/>
               <SectionSubheader>This is a very brief introduction personal introduction— an abstract.</SectionSubheader>
-            </div>
-            <div className="col-12 px-2 px-lg-5">
             </div>
           </div>
         </div>
         <div className="d-flex flex-column align-items-center justify-content-center">
-          <div className="w-100 d-flex flex-column align-items-center justify-content-center" style={{maxWidth: 700}}>
+          <div className="w-100  px-2 px-lg-5 d-flex flex-column align-items-center justify-content-center" style={{maxWidth: 700}}>
             <WithQuotes />
           </div>
         </div>
@@ -162,19 +159,14 @@ export default function HomePage() {
     )
   }
 
-  const Banner = () => ( 
-    <div className="w-100 d-flex flex-column align-items-center justify-content-center" style={{background: "#A38BBF"}}>
-
-    </div>
-  )
-  
   const OTSection = () => {
 
     return (
       <HomePageSection id={sections.OT} icon={sectionsIcons.OT} prev={sections.HOME} next={sections.YOGA} className="wave" >
-        <div className="container py-5" style={{padding: 0}}>
-          <div className="row w-100 align-items-center justify-content-center d-flex flex-row">
-            <div className="col-6 py-5 px-2 px-lg-5 d-flex flex-column align-items-start justify-content-start" style={{backgroud:"red"}}>
+        <Spacer y={2} />
+        <div className="container py-5 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+          <div className="row align-items-center justify-content-center d-flex flex-row">
+            <div className="col-12 col-xxl-6 py-5 px-2 px-lg-5 d-flex flex-column align-items-start justify-content-start" style={{backgroud:"red"}}>
               
               <div className="w-100 d-flex flex-column align-items-center justify-content-center">
                 <SectionHeader standard="Occupational" highlighted="Therapy"/>
@@ -216,8 +208,8 @@ export default function HomePage() {
                 </TextPlatform>
               </div>
             </div>
-            <div className="col-6">
-              <img src={placeholderImage} alt="homepage" className="nicole-image" style={{maxHeight: 500}}/>
+            <div className="col-12 col-xxl-6 p-5">
+              <img src={placeholderImage} alt="homepage" className="nicole-image ot-img"/>
             </div>
           </div>
         </div>
@@ -228,8 +220,8 @@ export default function HomePage() {
   const YogaSection = () => {
 
     const StudioFeature = ({image, title, memo, location}) => (
-      <Card as="figure" className="gap-2 d-flex flex-row align-items-center justify-content-center" css={{borderRadius: 0, border: "2px solid #777777"}} isPressable isHoverable>
-          <Card.Image src={image} alt={title} style={{height: "100%", width: "100%", maxWidth: 300, maxHeight: 300,}} />
+      <Card as="figure" className="gap-2 d-flex flex-row align-items-center justify-content-center" css={{borderRadius: 0, maxHeight: 300, border: "2px solid #777777"}} isPressable isHoverable>
+          <Card.Image src={image} alt={title} style={{height: "100%", width: "100%", maxWidth: 300, objectFit:"cover"}} />
           <figcaption className="d-flex flex-column align-items-start justify-content-start" style={{flex: 2}}>
             <Text b align="left">{title}</Text>
             <Text size="large" align="left">{memo}</Text>
@@ -240,8 +232,8 @@ export default function HomePage() {
     
     return (
       <HomePageSection id={sections.YOGA} icon={sectionsIcons.YOGA} prev={sections.OT} next={sections.WORKSHOPS} >
-        <div className="container-fluid py-5" style={{padding: 0}}>
-          <div className="row w-100 align-items-center justify-content-center d-flex flex-row">
+        <div className="container py-5" style={{padding: 0}}>
+          <div className="row align-items-center justify-content-center d-flex flex-row">
             <div className="col-12 d-flex flex-column align-items-center justify-content-center">
               <SectionHeader standard="Yoga & Pilates" highlighted="Instructor"/>
               <SectionSubheader>Something emphasizing how important movement is for wellbeing</SectionSubheader>
@@ -249,7 +241,7 @@ export default function HomePage() {
             <div className="col-12">
               <Spacer y={2} />
             </div>
-            <div className="col-5 px-2 px-lg-5">
+            <div className="col-5 px-2 px-lg-5 d-flex flex-column align-items-center justify-content-center">
               <div className="text-container">
                 <ThreeDots left color={lavender600}/>
                 <Text h2>My Experience</Text>
@@ -263,7 +255,7 @@ export default function HomePage() {
                 <ThreeDots right color={lavender600}/>
               </div>
             </div>
-            <div className="col-7 gap-4 d-flex flex-column align-items-center justify-content-center">
+            <div className="col-7 gap-4 d-flex flex-column align-items-center justify-content-center px-5">
               <StudioFeature image={placeholderImage} title="Studio 1" location="123 West St, Boston MA— Tuesdays @ 4pm" memo="At studio 1 I lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora minus voluptatum aspernatur dicta non! Adipisci, culpa voluptatum rem quae cum molestiae ad"/>
               <StudioFeature image={placeholderImage} title="Studio 2" location="123 West St, Boston MA— Tuesdays @ 4pm" memo="At studio 2 I lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora minus voluptatum aspernatur dicta non! Adipisci, culpa voluptatum rem quae cum molestiae ad"/>
             </div>
@@ -276,8 +268,8 @@ export default function HomePage() {
   const WorkshopSection = () => {
     
     const StudioFeature = ({image, title, memo, location}) => (
-      <Card as="figure" className="gap-2 d-flex flex-row align-items-center justify-content-center" css={{borderRadius: 0, border: "2px solid #777777"}} isPressable isHoverable>
-          <Card.Image src={image} alt={title} style={{height: "100%", width: "100%", maxWidth: 300, maxHeight: 300,}} />
+      <Card as="figure" className="gap-2 d-flex flex-row align-items-center justify-content-center" css={{borderRadius: 0, maxHeight: 300,  border: "2px solid #777777"}} isPressable isHoverable>
+          <Card.Image src={image} alt={title} style={{height: "100%", width: "100%", maxWidth: 300}} />
           <figcaption className="d-flex flex-column align-items-start justify-content-start" style={{flex: 2}}>
             <Text b align="left">{title}</Text>
             <Text size="large" align="left">{memo}</Text>
@@ -289,7 +281,7 @@ export default function HomePage() {
     return (
       <HomePageSection id={sections.WORKSHOPS} icon={sectionsIcons.WORKSHOPS} prev={sections.YOGA} next={sections.FOOTER} >
         <div className="container-fluid py-5" style={{padding: 0}}>
-          <div className="row w-100 align-items-center justify-content-center d-flex flex-row">
+          <div className="row align-items-center justify-content-center d-flex flex-row">
             <div className="col-12 d-flex flex-column align-items-center justify-content-center">
               <SectionHeader standard="Workshop" highlighted="Leader"/>
               <SectionSubheader>Come visit me at one of my workshops! </SectionSubheader>
