@@ -62,7 +62,7 @@ export default function Yoga() {
           <div className="col-lg-2 d-none d-lg-inline">
           </div>
           <div className="col-12 col-md-6 col-lg-5 pb-5 d-flex flex-column align-items-center justify-content-center">
-            <img src={studio1} alt="studio-1" className="studio-pic" />
+            <img src={studio2} alt="studio-1" className="studio-pic" />
             <div className="yoga-info p-2 d-flex flex-column align-items-center justify-content-center">
               <WLTextV2 color="white" size="$lg">Zen Zenith Studios</WLTextV2>
               <Divider style={{background: "white"}} className="w-100"/>

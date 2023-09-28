@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.365471a3.css",
-    "main.js": "/static/js/main.e5e55840.js",
+    "main.js": "/static/js/main.ab79184c.js",
     "static/media/studio2.png": "/static/media/studio2.3c0c860940b39112e7f0.png",
     "static/media/studio1.png": "/static/media/studio1.11de16f5fd31925b6545.png",
     "static/media/psychotherapy.png": "/static/media/psychotherapy.e890bb54f863a44f1755.png",
@@ -20,10 +20,10 @@
     "static/media/grayWaveTop.svg": "/static/media/grayWaveTop.90f0c84f4981597317fb8fc642483a14.svg",
     "index.html": "/index.html",
     "main.365471a3.css.map": "/static/css/main.365471a3.css.map",
-    "main.e5e55840.js.map": "/static/js/main.e5e55840.js.map"
+    "main.ab79184c.js.map": "/static/js/main.ab79184c.js.map"
   },
   "entrypoints": [
     "static/css/main.365471a3.css",
-    "static/js/main.e5e55840.js"
+    "static/js/main.ab79184c.js"
   ]
 }
