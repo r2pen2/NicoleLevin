@@ -20,9 +20,13 @@ export const nextUiTheme = createTheme({
 
       success: "#A6C437",
       white: "#ffffff",  
+
+      textPurple: "#291250"
     },
     space: {},
-    fonts: {},
+    fonts: {
+      sans: "Nunito"
+    },
     fontSizes: {
       xs: '0.75rem', 
       sm: '0.875rem', 

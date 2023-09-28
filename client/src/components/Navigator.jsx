@@ -1,41 +1,130 @@
 import { Divider, Link, Text } from '@nextui-org/react'
 import React from 'react'
-
-import image from "../assets/images/windows.jpg";
-
-const StyledLink = (props) => (
-  <div className="d-flex flex-row align-items-center justify-content-center py-3 w-100">
-    <Link style={{color: "#fefefe", flex: "100%"}} {...props} />
-  </div>
-)
+import {Navbar as NextUINavbar} from '@nextui-org/react'
+import { useState } from 'react'
+import { useRef } from 'react'
 
 export const navigatorWidth = "330px"
 
-//style={{position: "fixed"}}
-
 export default function Navigator() {
-  return (
-    <nav className="d-flex flex-column align-items-center justify-content-center" style={{width: navigatorWidth, height: "100vh", position:"relative"}}>
-      <div className="d-flex flex-column align-items-center justify-content-center h-100" style={{width: navigatorWidth, position: "fixed", zIndex: 2, top: 0, left: 0}}>
-        <div className="w-100 d-flex flex-row align-items-center justify-content-center">
-          <img src={image} alt="nicole" className="nav-headshot"/>
-        </div>
-        <StyledLink href="/#home">
+  
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+  const navbarToggleRef = useRef();
+  
+  function handleSideMenu() {
+    isSideMenuOpen && navbarToggleRef.current.click();
+  }
+
+  return [
+    <nav className='d-none d-md-flex custom'>
+      <Link href="#home">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
           Home
-        </StyledLink>
-        <StyledLink href="/#occupational-therapy">
-          Occupational Therapy
-        </StyledLink>
-        <StyledLink href="/#yoga-and-pilates">
+        </Text>
+      </Link>
+      <Link href="#about">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
+          About
+        </Text>
+      </Link>
+      <Link href="#psychotherapy">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
+          Psychotherapy
+        </Text>
+      </Link>
+      <Link href="#yoga-and-pilates">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
           Yoga & Pilates
-        </StyledLink>
-        <StyledLink href="/#workshops">
-          Workshop Leader
-        </StyledLink>
-        <StyledLink href="/#contact">
-          Contact Me
-        </StyledLink>
-      </div>
-    </nav>
-  )
+        </Text>
+      </Link>
+      <Link href="#workshops">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
+          Workshops
+        </Text>
+      </Link>
+      <Link href="#contact">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
+          Contact
+        </Text>
+      </Link>
+    </nav>,
+    <NextUINavbar
+      height="60px"
+      style={{
+        padding: 0,
+      }}
+      variant="sticky"
+      maxWidth="xl"
+      className='d-flex d-md-none'
+    >
+      <NextUINavbar.Toggle onChange={(s) => setIsSideMenuOpen(s)} ref={navbarToggleRef}/>
+      <NextUINavbar.Collapse>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#home"
+          >
+            Home
+          </Link>
+        </NextUINavbar.CollapseItem>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#about"
+            >
+            About
+          </Link>
+        </NextUINavbar.CollapseItem>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#yoga-and-pilates"
+          >
+            Yoga & Pilates
+          </Link>
+        </NextUINavbar.CollapseItem>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#workshops"
+          >
+            Workshops
+          </Link>
+        </NextUINavbar.CollapseItem>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#contact"
+          >
+            Contact
+          </Link>
+        </NextUINavbar.CollapseItem>
+      </NextUINavbar.Collapse>
+    </NextUINavbar>
+  ]
 }
