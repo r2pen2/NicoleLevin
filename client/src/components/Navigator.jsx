@@ -34,12 +34,12 @@ export default function Navigator() {
       </Link>
       <Link href="#yoga-and-pilates">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
-          Yoga & Pilates
+          Yoga, Pilates, & Dance
         </Text>
       </Link>
       <Link href="#workshops">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
-          Workshops
+          Genstalt Workshops
         </Text>
       </Link>
       <Link href="#contact">
@@ -95,7 +95,7 @@ export default function Navigator() {
             }}
             href="#yoga-and-pilates"
           >
-            Yoga & Pilates
+            Yoga, Pilates, & Dance
           </Link>
         </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem
@@ -108,7 +108,7 @@ export default function Navigator() {
             }}
             href="#workshops"
           >
-            Workshops
+            Genstalt Workshops
           </Link>
         </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem

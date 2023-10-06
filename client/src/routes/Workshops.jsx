@@ -42,10 +42,12 @@ export default function Workshops() {
   return (
     <section id="workshops" className="w-100 workshops-container d-flex flex-column align-items-center justify-content-center pt-5" >
       <div className="workshops-content px-2 px-md-5">
-        <WLHeaderV2>Workshops</WLHeaderV2>
-        <WLHeaderV2 h2 size="$2xl" color="#5F5A67">In addition to my yoga classes, I run workshops on improv dance and breathwork.</WLHeaderV2>
+        <WLHeaderV2>Education & Certifications</WLHeaderV2>
+        <WLHeaderV2 h2 size="$2xl" color="#5F5A67">
+          Somewhere here will be education and certifications. We can put your services with the psychotherapy overview, which I will need to be larger.
+        </WLHeaderV2>
         <Spacer y={2} />
-        <div className="workshop-details px-2 px-lg-3">
+        {/* <div className="workshop-details px-2 px-lg-3">
           <div className="container-fluid w-100 d-sm-block d-none">
             <BreathworkInline />
             <DanceInline />
@@ -65,7 +67,7 @@ export default function Workshops() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
             </WLTextV2>
           </div>
-        </div>
+        </div> */}
       </div>
       <Spacer y={2} />
       <img src={wave} alt="wave" className='w-100 shadow-top' style={{transform: "scaleX(-1)", width: "100vw", position: "absolute", bottom: -1, left: 0}}/>

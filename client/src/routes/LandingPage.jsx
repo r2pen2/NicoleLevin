@@ -9,7 +9,7 @@ export default function LandingPage() {
   return (
     <section id="home" className="landing-page-header-container">
       <hgroup style={{flex: 1}} className="d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 h1 size="$5xl" color="#291250">Nicole Levin</WLHeaderV2>
+        <WLHeaderV2 h1 size="$5xl" color="#291250">Nicole Levin LCSW CYT</WLHeaderV2>
         <WLHeaderV2 headerLevel={2} size="$2xl"color="#291250">Psychotherapist ・ Yoga & Pilates Instructor ・ Workshop Leader</WLHeaderV2>
         <Spacer y={2} />
         <div className="shadow-bottom">

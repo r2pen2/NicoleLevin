@@ -11,44 +11,50 @@ import meditation from "../assets/images/meditation.svg"
 import heart from "../assets/images/heart.svg"
 import waveWhite from "../assets/images/whiteWaveTop.svg"
 
+import cert from "../assets/images/cert.svg"
+
+const paragraph1 = "Nicole graduated in 1997 with a Masters in Social Work from the University of Pennsylvania. Since that time, she has been working as a psychotherapist helping people with a variety of issues including anxiety and depression."
+const paragraph2 = "With over 20 years of experience, she provides compassionate support and practical feedback to help clients effectively address personal life challenges. With compassion and understanding, she works with each individual to help them build on their strengths and attain their goals."
+const paragraph = `${paragraph1} ${paragraph2}`
+
 export default function Psychotherapy() {
   
   const TextInline = () => (
-    <div className="container d-md-block d-none" style={{padding: 0}}>
+    <div className="container d-lg-block d-none" style={{padding: 0}}>
       <div className="row d-flex flex-row align-items-center justify-content-center">
-        <div className="col-6">
+        <div className="col-12">
           <WLTextV2 color="#8C8C8C" align="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione aliquam molestias nostrum ea odio maxime, perferendis expedita quam ad soluta assumenda! Officiis blanditiis expedita voluptatum earum quas cum at.
+            {paragraph}
           </WLTextV2>
         </div>
-        <div className="col-6">
+        {/* <div className="col-6">
           <WLTextV2 color="#8C8C8C" align="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione aliquam molestias nostrum ea odio maxime, perferendis expedita quam ad soluta assumenda! Officiis blanditiis expedita voluptatum earum quas cum at.
+            {paragraph2}
           </WLTextV2>
-        </div>
+        </div> */}
       </div>
     </div>
   )
 
   const TextVertical = () => (
-    <div className="d-flex d-md-none flex-column align-items-center justify-content-center"s>
-      <WLTextV2 color="#8C8C8C" align="left">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione aliquam molestias nostrum ea odio maxime, perferendis expedita quam ad soluta assumenda! Officiis blanditiis expedita voluptatum earum quas cum at.
+    <div className="d-flex d-lg-none flex-column align-items-center justify-content-center"s>
+      <WLTextV2 color="#8C8C8C" indent align="left">
+        {paragraph}
       </WLTextV2>
-      <WLTextV2 color="#8C8C8C" align="left">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione aliquam molestias nostrum ea odio maxime, perferendis expedita quam ad soluta assumenda! Officiis blanditiis expedita voluptatum earum quas cum at.
-      </WLTextV2>
+      {/* <WLTextV2 color="#8C8C8C" align="left">
+        {paragraph2}
+      </WLTextV2> */}
     </div>
   )
 
   const HeaderInline =() => [
-    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" b align="left" size="$3xl">Psychotherapy</WLHeaderV2>,
-    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" h2 align="left" color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
+    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" b align="left" size="$3xl">Psychotherapy</WLHeaderV2>
+    // <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" h2 align="left" color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
   ]
 
   const HeaderVertical = () => [
-    <WLHeaderV2 className="psychotherapy-header d-lg-none" b size="$3xl">Psychotherapy</WLHeaderV2>,
-    <WLHeaderV2 className="psychotherapy-header d-lg-none " h2 color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
+    <WLHeaderV2 className="psychotherapy-header d-lg-none" b size="$3xl">Psychotherapy</WLHeaderV2>
+    // <WLHeaderV2 className="psychotherapy-header d-lg-none " h2 color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
   ]
 
   const WhiteSection = () => (
@@ -69,27 +75,27 @@ export default function Psychotherapy() {
 
   const GraySection = () => (
     <div className="row w-100 card-bottom px-2" >
-      <div className="col-12 col-lg-4 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-        <div className="line-right px-4">
-          <img src={brain} alt="brain" className="card-glyph" />
+      <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+        <div className="line-right px-4 d-flex flex-column align-items-center h-100">
+          <img src={cert} alt="cert" className="card-glyph" />
+          <Text b color="#E6E6E6">
+            PA Licensed Clinical Social Worker
+          </Text>
           <WLTextV2 color="#E6E6E6">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, corporis? Magni commodi ad cum rem eos laboriosam officia, dolores alias, et itaque reprehenderit praesentium cumque cupiditate numquam ullam aliquid ratione.
+            Nicole is a PA Licensed Clinical Social Worker, bringing a wealth of expertise and dedication to her practice. Her licensure stands as a testament to her commitment to professional excellence and compassionate care.
           </WLTextV2>
         </div>
       </div>
-      <div className="col-12 col-lg-4 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-        <div className="line-right px-4">
-          <img src={meditation} alt="meditation" className="card-glyph" />
+      <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
+        <div className="px-4 d-flex flex-column align-items-center h-100">
+          <img src={cert} alt="cert" className="card-glyph" />
+          <Text b color="#E6E6E6">
+            Certified Gestalt Therapist
+          </Text>
           <WLTextV2 color="#E6E6E6">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, corporis? Magni commodi ad cum rem eos laboriosam officia, dolores alias, et itaque reprehenderit praesentium cumque cupiditate numquam ullam aliquid ratione.
+            Nicole is a Certified Gestalt Therapist, blending deep understanding and skill to facilitate meaningful personal growth in her clients.
           </WLTextV2>
         </div>
-      </div>
-      <div className="col-12 col-lg-4 px-4 py-3 d-flex flex-column align-items-center justify-content-center">
-        <img src={heart} alt="heart" className="card-glyph" />
-        <WLTextV2 color="#E6E6E6">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, corporis? Magni commodi ad cum rem eos laboriosam officia, dolores alias, et itaque reprehenderit praesentium cumque cupiditate numquam ullam aliquid ratione.
-        </WLTextV2>
       </div>
     </div>
   )

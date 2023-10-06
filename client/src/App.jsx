@@ -90,19 +90,29 @@ export function App(props) {
         <Workshops />
       </main>
       <footer id="contact" className="p-5">
-        <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin</WLHeaderV2>
+        <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin LCSW CYT</WLHeaderV2>
         <div className="d-flex flex-row gap-2 align-items-center justify-content-center">
-          <Link href="mailto:nicole@nicole.com">
-            <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>nicole@nicole.com</Text>
+          <Link href="mailto:nicolelevinlcsw@gmail.com">
+            <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>nicolelevinlcsw@gmail.com</Text>
           </Link>
           <Text color="#8C8C8C">・</Text>
-          <Link href="callto:7818799058">
-            <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>(781) 879-9058</Text>
+          <Link href="callto:2156687277">
+            <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>(215) 668-7277</Text>
           </Link>
         </div>
-            <Link href="https://www.joed.dev">
-              <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Web Designer: Joe Dobbelaar</Text>
-            </Link>
+        <div className="d-flex flex-row gap-2 align-items-center justify-content-center">
+          <Link href="https://www.nicolelevin.org">
+            <Text color="#8C8C8C" css={{textDecoration:"underline"}}>nicolelevin.org</Text>
+          </Link>
+          <Text color="#8C8C8C">・</Text>
+          <Link href="https://www.psychologytoday.com/profile/66839">
+            <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Psychology Today</Text>
+          </Link>
+        </div>
+
+          <Link href="https://www.joed.dev">
+            <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Web Designer: Joe Dobbelaar</Text>
+          </Link>
           <Link href="">
             <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Admin Login</Text>
           </Link>
