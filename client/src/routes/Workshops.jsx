@@ -9,13 +9,6 @@ import wave from "../assets/images/grayWaveTop.svg"
 export default function Workshops() {
   return (
     <section id="workshops" className="w-100 workshops-container d-flex flex-column align-items-center justify-content-center pt-5" >
-      <div className="w-100 px-4 px-md-5">
-        <WLHeaderV2>Services</WLHeaderV2>
-        <WLTextV2 color="#5F5A67">
-          Nicole offers a diverse range of therapeutic services tailored to individual needs. Her expertise spans individual psychotherapy employing traditional talk therapy techniques, to more holistic approaches like yoga therapy which seamlessly integrates talk therapy with yoga and breathwork. In addition, Nicole specializes in both private sessions and group classes for yoga, pilates, and holistic movement. She also conducts immersive workshops, combining the benefits of yoga, breath, and chant, as well as unique Group Motion workshops. Each service is designed to support and guide individuals on their path to mental, emotional, and physical well-being.
-        </WLTextV2>
-        <Spacer y={2} />
-      </div>
       <div className="workshops-content px-4 px-md-5">
         <QuoteBlock outlineColor="white" color="#281250">
           <WLHeaderV2>Personal Statement</WLHeaderV2>
