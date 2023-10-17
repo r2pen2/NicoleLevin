@@ -1,5 +1,5 @@
 import { Text, Button, Spacer } from '@nextui-org/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
 
@@ -12,12 +12,19 @@ import heart from "../assets/images/heart.svg"
 import waveWhite from "../assets/images/whiteWaveTop.svg"
 
 import cert from "../assets/images/cert.svg"
+import { TreatmentItem } from '../api/siteModels.ts';
 
 const paragraph1 = "Nicole graduated in 1997 with a Masters in Social Work from the University of Pennsylvania. Since that time, she has been working as a psychotherapist helping people with a variety of issues including anxiety and depression."
 const paragraph2 = "With over 20 years of experience, she provides compassionate support and practical feedback to help clients effectively address personal life challenges. With compassion and understanding, she works with each individual to help them build on their strengths and attain their goals."
 const paragraph = `${paragraph1} ${paragraph2}`
 
 export default function Psychotherapy() {
+
+  const [treatments, setTreatments] = useState([])
+
+  useEffect(() => {
+    setTreatments([TreatmentItem.examples().anxiety, TreatmentItem.examples().depression, TreatmentItem.examples().trauma, TreatmentItem.examples().grief, TreatmentItem.examples().relationships, TreatmentItem.examples().stress, TreatmentItem.examples().chronic, TreatmentItem.examples().work, TreatmentItem.examples().transitions])
+  }, [])
   
   const TextInline = () => (
     <div className="container d-lg-block d-none" style={{padding: 0}}>
@@ -57,6 +64,12 @@ export default function Psychotherapy() {
     // <WLHeaderV2 className="psychotherapy-header d-lg-none " h2 color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
   ]
 
+  const Treatment = ({t}) => (
+    <div className="col-12 col-md-6 col-lg-4 treatment">
+      <Text>{t.title}</Text>
+    </div>
+  )
+
   const WhiteSection = () => (
     <div className="row w-100 card-top p-2">
       <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-center py-2">
@@ -70,13 +83,19 @@ export default function Psychotherapy() {
       <div className="col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
         <img src={chair} alt="chair" className="chair" />
       </div>
+      <WLHeaderV2 h2 className="treatments-header">Treatment Specializations</WLHeaderV2>
+      <div className="container">
+        <ul className="row">
+          {treatments.map((t, i) => <Treatment key={i} t={t}/>)}
+        </ul>
+      </div>
     </div>
   )
 
   const GraySection = () => (
     <div className="row w-100 card-bottom px-2" >
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-        <div className="line-right px-4 d-flex flex-column align-items-center h-100">
+        <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
           <img src={cert} alt="cert" className="card-glyph" />
           <Text b color="#E6E6E6">
             PA Licensed Clinical Social Worker
@@ -87,7 +106,7 @@ export default function Psychotherapy() {
         </div>
       </div>
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
-        <div className="px-4 d-flex flex-column align-items-center h-100">
+        <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
           <img src={cert} alt="cert" className="card-glyph" />
           <Text b color="#E6E6E6">
             Certified Gestalt Therapist

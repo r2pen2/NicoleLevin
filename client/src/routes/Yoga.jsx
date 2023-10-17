@@ -48,13 +48,13 @@ export default function Yoga() {
   return (
     <section id="yoga-and-pilates" className="yoga-studios-container px-2 px-sm-5">
       <img src={waveWhiteBottom} alt="wave" className='w-100 shadow-bottom' style={{position: "absolute", top: -1, left: 0, width: "100vw"}}/>
-      {/* <div className="px-2">
+      <div className="px-2">
         <div className="white-box p-2">
           <WLTextV2 color="#1E1E1E" size="$lg">
             Somewhere here will be education and certifications. We can put your services with the psychotherapy overview, which I will need to be larger.
           </WLTextV2>
         </div>
-      </div> */}
+      </div>
       <img src={waveWhiteTop} alt="wave-white" className='w-100 shadow-top' style={{position: "absolute", bottom: -1, left: 0, width: "100vw"}}/>
     </section>
   )

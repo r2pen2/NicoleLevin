@@ -5,7 +5,7 @@ import { WLHeaderV2, WLTextV2 } from '../libraries/Web-Legos/components/Text'
 import glyph from "../assets/images/flower.png"
 
 const Left = () => (
-  <div className="d-flex flex-column align-items-center justify-content-center" style={{maxWidth: 650}}>
+  <div className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
     <WLHeaderV2 h2>Yoga, Pilates, & Dance</WLHeaderV2>
     <WLTextV2>
       In 1999, Nicole was certified as a yoga teacher and completed a secondary certification in 2016. In 2021, she expanded her teaching and became a certified pilates teacher. She is also certified as a Group Motion facilitator. Currently, Nicole teaches yoga, pilates, and holistic movement at yoga centers, athletic clubs, houses of worship, schools, non-profits, and at the Kripalu Center for Yoga and Health.
@@ -14,7 +14,7 @@ const Left = () => (
 )
 
 const Right = () => (
-  <div className="d-flex flex-column align-items-center justify-content-center" style={{maxWidth: 650}}>
+  <div className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
     <WLHeaderV2 h2>Gestalt Workshops</WLHeaderV2>
     <WLTextV2>
       Nicole graduated from a 3 year program in Gestalt therapy in 2012 and now lead workshops integrating gestalt theory and techniques, yoga, breath work and chant. These workshops offer a safe haven for people to explore their deepest feelings and to experience profound transformation. Her unwavering belief in each person's innate ability for healing and wholeness drives her passion and dedication to her work.
@@ -24,7 +24,7 @@ const Right = () => (
 
 export default function YogaBanner() {
   return (
-    <section id="yoga-and-pilates" className="w-100 yoga-container d-flex flex-column align-items-center justify-content-center py-5" style={{zIndex: 2}}>
+    <section id="yoga-and-pilates" className="w-100 yoga-container d-flex flex-column align-items-center justify-content-center py-2" style={{zIndex: 2}}>
       <div className={`w-100`}>
         <div className="wl-glyph-section-two-items-no-actions d-none d-lg-flex wl-gap-3">
           <Left />

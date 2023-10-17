@@ -24,6 +24,15 @@ section {
   scroll-margin: 80px;
 }
 
+ul {
+  padding-left: 0 !important;
+}
+
+ol {
+  padding-left: 0rem !important;
+  list-style: none;
+}
+
 footer {
   background: #1e1e1e;
   display: flex;
@@ -41,7 +50,7 @@ nav.custom {
   top: 0;
   left: 0;
   right: 0;
-  position: sticky;
+  position: absolute;
   margin-bottom: -60px;
   z-index: 5;
   height: 60px;

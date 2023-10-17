@@ -18,7 +18,7 @@ import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import Navigator, { navigatorWidth } from './components/Navigator';
 import { lavender600, orange200 } from './libraries/Web-Legos/api/colors';
 import LandingPage from './routes/LandingPage';
-import About from "./routes/About";
+import EducationAndCertifications from "./routes/EducationAndCertifications";
 import Psychotherapy from "./routes/Psychotherapy";
 import YogaBanner from "./routes/YogaBanner";
 import Yoga from "./routes/Yoga";
@@ -83,10 +83,10 @@ export function App(props) {
       >
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <LandingPage />
-        <About />
+        <EducationAndCertifications />
         <Psychotherapy />
         <YogaBanner />
-        <Yoga />
+        {/* <Yoga /> */}
         <Workshops />
       </main>
       <footer id="contact" className="p-5">
