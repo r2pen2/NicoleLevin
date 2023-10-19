@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-import "../assets/style/workshops.css"
+import "../assets/style/personalStatement.css"
 import { QuoteBlock, WLHeaderV2, WLTextV2 } from '../libraries/Web-Legos/components/Text'
 import { Spacer } from '@nextui-org/react'
 
 import wave from "../assets/images/grayWaveTop.svg"
 
-export default function Workshops() {
+export default function PersonalStatement() {
   return (
-    <section id="workshops" className="w-100 workshops-container d-flex flex-column align-items-center justify-content-center pt-5" >
+    <section id="personal-statement" className="w-100 workshops-container d-flex flex-column align-items-center justify-content-center pt-5" >
       <div className="workshops-content px-4 px-md-5">
         <QuoteBlock outlineColor="white" color="#281250">
           <WLHeaderV2>Personal Statement</WLHeaderV2>

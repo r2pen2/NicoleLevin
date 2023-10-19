@@ -16,12 +16,7 @@ export default function Navigator() {
   }
 
   return [
-    <nav className='d-none d-md-flex custom'>
-      <Link href="#home">
-        <Text size="$lg" color="#291250" style={{margin: 0}}>
-          Home
-        </Text>
-      </Link>
+    <nav className='d-none d-lg-flex custom'>
       <Link href="#about">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
           About
@@ -39,7 +34,12 @@ export default function Navigator() {
       </Link>
       <Link href="#workshops">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
-          Genstalt Workshops
+          Gestalt Workshops
+        </Text>
+      </Link>
+      <Link href="#personal-statement">
+        <Text size="$lg" color="#291250" style={{margin: 0}}>
+          Personal Statement
         </Text>
       </Link>
       <Link href="#contact">
@@ -55,23 +55,10 @@ export default function Navigator() {
       }}
       variant="sticky"
       maxWidth="xl"
-      className='d-flex d-md-none'
+      className='d-flex d-lg-none'
     >
       <NextUINavbar.Toggle onChange={(s) => setIsSideMenuOpen(s)} ref={navbarToggleRef}/>
       <NextUINavbar.Collapse>
-        <NextUINavbar.CollapseItem
-        >
-          <Link
-          onClick={handleSideMenu}
-            color="inherit"
-            css={{
-              minWidth: "100%"
-            }}
-            href="#home"
-          >
-            Home
-          </Link>
-        </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem
         >
           <Link
@@ -108,7 +95,7 @@ export default function Navigator() {
             }}
             href="#workshops"
           >
-            Genstalt Workshops
+            Gestalt Workshops
           </Link>
         </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem
@@ -123,6 +110,19 @@ export default function Navigator() {
           >
             Contact
           </Link>
+        <NextUINavbar.CollapseItem
+        >
+          <Link
+          onClick={handleSideMenu}
+            color="inherit"
+            css={{
+              minWidth: "100%"
+            }}
+            href="#personal-statement"
+          >
+            Personal Statement
+          </Link>
+        </NextUINavbar.CollapseItem>
         </NextUINavbar.CollapseItem>
       </NextUINavbar.Collapse>
     </NextUINavbar>

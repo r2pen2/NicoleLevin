@@ -12,13 +12,7 @@ export default function LandingPage() {
         <WLHeaderV2 h1 size="$5xl" color="#291250">Nicole Levin LCSW CYT</WLHeaderV2>
         <WLHeaderV2 headerLevel={2} size="$2xl"color="#291250">Psychotherapist ・ Yoga & Pilates Instructor ・ Workshop Leader</WLHeaderV2>
         <Divider/>
-        <Spacer y={0.5} />
-        <div style={{maxWidth: 800}}>
-          <WLTextV2 color="#291250">
-            Nicole offers a diverse range of therapeutic services tailored to individual needs. Her expertise spans individual psychotherapy employing traditional talk therapy techniques, to more holistic approaches like yoga therapy which seamlessly integrates talk therapy with yoga and breathwork. In addition, Nicole specializes in both private sessions and group classes for yoga, pilates, and holistic movement. She also conducts immersive workshops, combining the benefits of yoga, breath, and chant, as well as unique Group Motion workshops. Each service is designed to support and guide individuals on their path to mental, emotional, and physical well-being.
-          </WLTextV2>        
-        </div>
-        <Spacer y={2} />
+        <Spacer y={1} />
         <div className="shadow-bottom">
           <Button onClick={() => window.location = "#contact"} rounded color="white" className="landing-button">
             Contact Me

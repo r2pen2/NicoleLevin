@@ -55,12 +55,12 @@ export default function Psychotherapy() {
   )
 
   const HeaderInline =() => [
-    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" b align="left" size="$3xl">Psychotherapy</WLHeaderV2>
+    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" b align="left" >Psychotherapy</WLHeaderV2>
     // <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" h2 align="left" color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
   ]
 
   const HeaderVertical = () => [
-    <WLHeaderV2 className="psychotherapy-header d-lg-none" b size="$3xl">Psychotherapy</WLHeaderV2>
+    <WLHeaderV2 className="psychotherapy-header d-lg-none" b >Psychotherapy</WLHeaderV2>
     // <WLHeaderV2 className="psychotherapy-header d-lg-none " h2 color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
   ]
 
@@ -71,8 +71,8 @@ export default function Psychotherapy() {
   )
 
   const WhiteSection = () => (
-    <div className="row w-100 card-top p-2">
-      <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-center py-2">
+    <section id="psychotherapy" className="row w-100 card-top p-2">
+      <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start py-2">
         <hgroup className="w-100 d-flex flex-column align-items-center align-items-md-start">
           <HeaderInline />
           <HeaderVertical />
@@ -89,14 +89,13 @@ export default function Psychotherapy() {
           {treatments.map((t, i) => <Treatment key={i} t={t}/>)}
         </ul>
       </div>
-    </div>
+    </section>
   )
 
   const GraySection = () => (
     <div className="row w-100 card-bottom px-2" >
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
         <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
-          <img src={cert} alt="cert" className="card-glyph" />
           <Text b color="#E6E6E6">
             PA Licensed Clinical Social Worker
           </Text>
@@ -107,7 +106,6 @@ export default function Psychotherapy() {
       </div>
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
         <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
-          <img src={cert} alt="cert" className="card-glyph" />
           <Text b color="#E6E6E6">
             Certified Gestalt Therapist
           </Text>
@@ -120,7 +118,7 @@ export default function Psychotherapy() {
   )
 
   return (
-    <section id="psychotherapy" className="psychotherapy-container px-2 px-sm-5">
+    <section  className="psychotherapy-container px-2 px-sm-5">
       <img src={wave} alt="wave" className='w-100 shadow-bottom' style={{transform: "scaleX(-1) scaleY(-1)", position: "absolute", top: -1, left: 0, width: "100vw"}}/>
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center psychotherapy-card-container">
         <WhiteSection />
