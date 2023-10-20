@@ -4,6 +4,7 @@ import React from 'react'
 import "../assets/style/landingPage.css";
 import wave from "../assets/images/grayWaveTop.svg"
 import { WLHeaderV2, WLTextV2 } from '../libraries/Web-Legos/components/Text';
+import { Alert } from '@mui/material';
 
 export default function LandingPage() {
   return (
@@ -18,6 +19,13 @@ export default function LandingPage() {
             Contact Me
           </Button>
         </div>
+        <Spacer y={1} />
+      
+        <div className="d-flex flex-column align-items-center justify-content-center gap-2">
+          <Alert severity="info">Last updated 10/19 @ 5:30pm: Sections have been rearranged, footer is mobile compliant, and navigation works. Hopefully I'll have this Apple device display issue figured out by tomorrow evening.</Alert>
+          <Alert severity="error">Section dividers & shadows act funny on Apple devices</Alert>
+        </div>
+
       </hgroup>
         <img src={wave} alt="wave" className='w-100 shadow-top' style={{position: "absolute", bottom: -1, left: 0, width: "100vw"}}/>
     </section>
