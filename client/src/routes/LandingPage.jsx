@@ -8,7 +8,7 @@ import { Alert } from '@mui/material';
 
 const GrayWave = () => (
   <div className='w-100 shadow-bottom' style={{position: "absolute", bottom: -1, left: 0, width: "100vw"}}>
-    <svg width="100vw" height="104" viewBox="0 0 100vw 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100vw" viewBox="0 0 1456 104" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_3_60)">
       <path d="M0 89.3088L80.8889 91.8052C161.778 94.3015 323.556 99.2941 485.333 96.3699C647.111 93.4812 808.889 82.6401 970.667 66.5923C1132.44 50.5445 1294.22 29.2901 1375.11 18.6272L1456 8V105H1375.11C1294.22 105 1132.44 105 970.667 105C808.889 105 647.111 105 485.333 105C323.556 105 161.778 105 80.8889 105H0V89.3088Z" fill="#1E1E1E"/>
       </g>
@@ -43,8 +43,7 @@ export default function LandingPage() {
         <Spacer y={1} />
       
         <div className="d-flex flex-column align-items-center justify-content-center gap-2">
-          <Alert severity="info">Last updated 10/19 @ 5:30pm: Sections have been rearranged, footer is mobile compliant, and navigation works. Hopefully I'll have this Apple device display issue figured out by tomorrow evening.</Alert>
-          <Alert severity="error">Section dividers & shadows act funny on Apple devices</Alert>
+          <Alert severity="info">Last updated 10/21 @ 6:30pm: After much struggle, this site now looks right on apple devices. I fear that some of the headers don't scale correctly, so I'm working on that. Unfortunately, it looks like I have to update my old iPhone to view the page, so that's this evening's roadblock.</Alert>
         </div>
 
       </hgroup>

@@ -106,21 +106,31 @@ export function App(props) {
           <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>(215) 668-7277</Text>
         </Link>
       </div>
-      <div className="d-flex flex-row d-sm-none gap-2 align-items-center justify-content-start">
+      <div className="d-flex flex-row d-md-none gap-2 align-items-center justify-content-start">
         <Link href="mailto:nicolelevinlcsw@gmail.com">
           <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>nicolelevinlcsw@gmail.com</Text>
         </Link>
       </div>
-      <div className="d-flex flex-row d-sm-none gap-2 align-items-center justify-content-start">
+      <div className="d-flex flex-row d-md-none gap-2 align-items-center justify-content-start">
         <Link href="callto:2156687277">
           <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>(215) 668-7277</Text>
         </Link>
       </div>
-      <div className="d-flex flex-row gap-2 align-items-center justify-content-start">
+      <div className="d-md-flex d-none flex-row gap-2 align-items-center justify-content-start">
         <Link href="https://www.nicolelevin.org">
           <Text color="#8C8C8C" css={{textDecoration:"underline"}}>nicolelevin.org</Text>
         </Link>
         <Text color="#8C8C8C">・</Text>
+        <Link href="https://www.psychologytoday.com/profile/66839">
+          <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Psychology Today</Text>
+        </Link>
+      </div>
+      <div className="d-flex flex-row d-md-none gap-2 align-items-center justify-content-start">
+        <Link href="https://www.nicolelevin.org">
+          <Text color="#8C8C8C" css={{textDecoration:"underline"}}>nicolelevin.org</Text>
+        </Link>
+      </div>
+      <div className="d-flex flex-row d-md-none gap-2 align-items-center justify-content-start">
         <Link href="https://www.psychologytoday.com/profile/66839">
           <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Psychology Today</Text>
         </Link>

@@ -65,7 +65,8 @@ export default function Navigator() {
           onClick={handleSideMenu}
             color="inherit"
             css={{
-              minWidth: "100%"
+              minWidth: "100%",
+              paddingLeft: "1rem"
             }}
             href="#about"
             >
@@ -78,7 +79,8 @@ export default function Navigator() {
           onClick={handleSideMenu}
             color="inherit"
             css={{
-              minWidth: "100%"
+              minWidth: "100%",
+              paddingLeft: "1rem"
             }}
             href="#yoga-and-pilates"
           >
@@ -91,7 +93,8 @@ export default function Navigator() {
           onClick={handleSideMenu}
             color="inherit"
             css={{
-              minWidth: "100%"
+              minWidth: "100%",
+              paddingLeft: "1rem"
             }}
             href="#workshops"
           >
@@ -104,25 +107,27 @@ export default function Navigator() {
           onClick={handleSideMenu}
             color="inherit"
             css={{
-              minWidth: "100%"
+              minWidth: "100%",
+              paddingLeft: "1rem"
             }}
             href="#contact"
           >
             Contact
           </Link>
+        </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem
         >
           <Link
           onClick={handleSideMenu}
             color="inherit"
             css={{
-              minWidth: "100%"
+              minWidth: "100%",
+              paddingLeft: "1rem"
             }}
             href="#personal-statement"
           >
             Personal Statement
           </Link>
-        </NextUINavbar.CollapseItem>
         </NextUINavbar.CollapseItem>
       </NextUINavbar.Collapse>
     </NextUINavbar>

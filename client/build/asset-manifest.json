@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b40d64c0.css",
-    "main.js": "/static/js/main.b19524bd.js",
+    "main.js": "/static/js/main.2187f1d5.js",
     "static/media/studio2.png": "/static/media/studio2.3c0c860940b39112e7f0.png",
     "static/media/studio1.png": "/static/media/studio1.11de16f5fd31925b6545.png",
     "static/media/psychotherapy.png": "/static/media/psychotherapy.e890bb54f863a44f1755.png",
@@ -16,14 +16,14 @@
     "static/media/heart.svg": "/static/media/heart.73c3e0c120dca47e4cd325d43e1bc9ee.svg",
     "static/media/cert.svg": "/static/media/cert.ea16e4c80ec8c8a7b6888e1b09f60eb9.svg",
     "static/media/whiteWaveTop.svg": "/static/media/whiteWaveTop.b2e02871f6b837a6f2bca7931b592abb.svg",
-    "static/media/whiteWaveBottom.svg": "/static/media/whiteWaveBottom.66ee4e33fba239224337c3b431c8bbe3.svg",
+    "static/media/whiteWaveBottom.svg": "/static/media/whiteWaveBottom.a19b569f45d3f53ac72fabe5988f14c2.svg",
     "static/media/grayWaveTop.svg": "/static/media/grayWaveTop.90f0c84f4981597317fb8fc642483a14.svg",
     "index.html": "/index.html",
     "main.b40d64c0.css.map": "/static/css/main.b40d64c0.css.map",
-    "main.b19524bd.js.map": "/static/js/main.b19524bd.js.map"
+    "main.2187f1d5.js.map": "/static/js/main.2187f1d5.js.map"
   },
   "entrypoints": [
     "static/css/main.b40d64c0.css",
-    "static/js/main.b19524bd.js"
+    "static/js/main.2187f1d5.js"
   ]
 }
