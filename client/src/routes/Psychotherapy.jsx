@@ -163,7 +163,7 @@ export default function Psychotherapy() {
   )
 
   return (
-    <section  className="psychotherapy-container px-2 px-sm-5">
+    <section className="psychotherapy-container px-2 px-sm-5">
       <GrayWave />
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center psychotherapy-card-container">
         <WhiteSection />

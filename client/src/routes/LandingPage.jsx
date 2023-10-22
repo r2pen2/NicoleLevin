@@ -43,7 +43,7 @@ export default function LandingPage() {
         <Spacer y={1} />
       
         <div className="d-flex flex-column align-items-center justify-content-center gap-2">
-          <Alert severity="info">Last updated 10/21 @ 6:30pm: After much struggle, this site now looks right on apple devices. I fear that some of the headers don't scale correctly, so I'm working on that. Unfortunately, it looks like I have to update my old iPhone to view the page, so that's this evening's roadblock.</Alert>
+          <Alert severity="info">Last updated 10/22 @ 7:45pm: Headers should be looking good now. I'll send you an email with login instructions on 10/23.</Alert>
         </div>
 
       </hgroup>

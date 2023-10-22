@@ -8,6 +8,14 @@
   padding-bottom: 200px;
 }
 
+.psychotherapy-header {
+  font-size: 40px;
+}
+
+.treatments-header {
+  font-weight: normal !important;
+}
+
 .chair {
   height: 100%;
   width: 100%;
