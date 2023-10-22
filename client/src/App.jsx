@@ -205,7 +205,7 @@ export function App(props) {
         <PersonalStatement />
       </main>
       <footer id="contact" className="p-5 flex-column align-items-center justify-content-center">
-        <div className="d-lg-flex d-none align-items-center justify-content-center">
+        <div className="d-lg-none d-flex align-items-center justify-content-center">
           <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin LCSW CYT</WLHeaderV2>
         </div>
         <FooterRightCentered />
@@ -216,6 +216,9 @@ export function App(props) {
         <div className="row w-100 d-none d-lg-flex">
           <FooterLeftLarge />
           <FooterRightLarge />
+        </div>
+        <div className="d-lg-none d-flex">
+          <Spacer y={1}/>
         </div>
         <div className="d-lg-flex w-100 d-none flex-row gap-2 align-items-end justify-content-center">
           <Link href="https://www.joed.dev">
