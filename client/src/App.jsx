@@ -96,7 +96,6 @@ export function App(props) {
 
   const FooterLeftCentered = () => (
     <div className="d-flex flex-column align-items-center d-lg-none" style={{maxWidth: 600}}>
-      <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin LCSW CYT</WLHeaderV2>
       <div className="d-md-flex flex-row d-none gap-2 align-items-center justify-content-start">
         <Link href="mailto:nicolelevinlcsw@gmail.com">
           <Text color="#8C8C8C" size="$lg" css={{textDecoration:"underline"}}>nicolelevinlcsw@gmail.com</Text>
@@ -206,11 +205,14 @@ export function App(props) {
         <PersonalStatement />
       </main>
       <footer id="contact" className="p-5 flex-column align-items-center justify-content-center">
-        <FooterLeftCentered />
+        <div className="d-lg-flex d-none align-items-center justify-content-center">
+          <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin LCSW CYT</WLHeaderV2>
+        </div>
+        <FooterRightCentered />
         <div className="d-lg-none d-flex">
           <Spacer y={1}/>
         </div>
-        <FooterRightCentered />
+        <FooterLeftCentered />
         <div className="row w-100 d-none d-lg-flex">
           <FooterLeftLarge />
           <FooterRightLarge />
