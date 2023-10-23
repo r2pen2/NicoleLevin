@@ -1,29 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.33d4ecf1.css",
-    "main.js": "/static/js/main.be4c2453.js",
-    "static/media/studio2.png": "/static/media/studio2.3c0c860940b39112e7f0.png",
-    "static/media/studio1.png": "/static/media/studio1.11de16f5fd31925b6545.png",
+    "main.js": "/static/js/main.90ac3886.js",
     "static/media/psychotherapy.png": "/static/media/psychotherapy.e890bb54f863a44f1755.png",
     "static/media/watercolor.png": "/static/media/watercolor.cdf6cb02c5ceeb447164.png",
     "static/media/yoga.png": "/static/media/yoga.ab07d7b3729d8c6c1dda.png",
     "static/media/chair.png": "/static/media/chair.c8608e08b0df41c879dc.png",
     "static/media/flower.png": "/static/media/flower.6d431da3aed22a7fd760.png",
     "static/media/nicole.jpg": "/static/media/nicole.ff2f358bc8f9a0a21fcc.jpg",
-    "static/media/brain.svg": "/static/media/brain.67b2b6eac389d7a2cc0f0d4d91cf5911.svg",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
-    "static/media/meditation.svg": "/static/media/meditation.1b6667ac147e04e32a5574b8052a9880.svg",
-    "static/media/heart.svg": "/static/media/heart.73c3e0c120dca47e4cd325d43e1bc9ee.svg",
-    "static/media/cert.svg": "/static/media/cert.ea16e4c80ec8c8a7b6888e1b09f60eb9.svg",
-    "static/media/whiteWaveTop.svg": "/static/media/whiteWaveTop.b2e02871f6b837a6f2bca7931b592abb.svg",
-    "static/media/whiteWaveBottom.svg": "/static/media/whiteWaveBottom.a19b569f45d3f53ac72fabe5988f14c2.svg",
-    "static/media/grayWaveTop.svg": "/static/media/grayWaveTop.90f0c84f4981597317fb8fc642483a14.svg",
     "index.html": "/index.html",
     "main.33d4ecf1.css.map": "/static/css/main.33d4ecf1.css.map",
-    "main.be4c2453.js.map": "/static/js/main.be4c2453.js.map"
+    "main.90ac3886.js.map": "/static/js/main.90ac3886.js.map"
   },
   "entrypoints": [
     "static/css/main.33d4ecf1.css",
-    "static/js/main.be4c2453.js"
+    "static/js/main.90ac3886.js"
   ]
 }

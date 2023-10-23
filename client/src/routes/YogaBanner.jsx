@@ -4,25 +4,24 @@ import "../assets/style/yoga.css"
 import { WLHeaderV2, WLTextV2 } from '../libraries/Web-Legos/components/Text'
 import glyph from "../assets/images/flower.png"
 
-const Left = () => (
-  <section id="yoga-and-pilates" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
-    <WLHeaderV2 h2>Yoga, Pilates, & Dance</WLHeaderV2>
-    <WLTextV2>
-      In 1999, Nicole was certified as a yoga teacher and completed a secondary certification in 2016. In 2021, she expanded her teaching and became a certified pilates teacher. She is also certified as a Group Motion facilitator. Currently, Nicole teaches yoga, pilates, and holistic movement at yoga centers, athletic clubs, houses of worship, schools, non-profits, and at the Kripalu Center for Yoga and Health.
-    </WLTextV2>
-  </section>
-)
+export default function YogaBanner({userCanEditText}) {
+  
+  const Left = () => (
+    <section id="yoga-and-pilates" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
+      <WLHeaderV2 h2 firestoreId="yoga-header" editable={userCanEditText} />
+      <WLTextV2 firestoreId="yoga-body" editable={userCanEditText}>
+        
+      </WLTextV2>
+    </section>
+  )
+  
+  const Right = () => (
+    <section id="workshops" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
+      <WLHeaderV2 h2 firestoreId="gestalt-workshops-header" editable={userCanEditText}/>
+      <WLTextV2 firestoreId="gestalt-workshops-body" editable={userCanEditText}/>
+    </section>
+  )
 
-const Right = () => (
-  <section id="workshops" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
-    <WLHeaderV2 h2>Gestalt Workshops</WLHeaderV2>
-    <WLTextV2>
-      Nicole graduated from a 3 year program in Gestalt therapy in 2012 and now lead workshops integrating gestalt theory and techniques, yoga, breath work and chant. These workshops offer a safe haven for people to explore their deepest feelings and to experience profound transformation. Her unwavering belief in each person's innate ability for healing and wholeness drives her passion and dedication to her work.
-    </WLTextV2>
-  </section>
-)
-
-export default function YogaBanner() {
   return (
     <section className="w-100 yoga-container d-flex flex-column align-items-center justify-content-center py-2" style={{zIndex: 2}}>
       <div className={`w-100`}>

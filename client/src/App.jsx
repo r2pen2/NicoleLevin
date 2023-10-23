@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Text } from '@nextui-org/react';
 import { createContext, useEffect, useState } from 'react';
 
+import {FooterAuthButton} from "./libraries/Web-Legos/components/Auth"
+
 import {LineButton} from "./libraries/Web-Legos/components/Buttons"
 
 // API Imports
@@ -23,12 +25,13 @@ import LandingPage from './routes/LandingPage';
 import EducationAndCertifications from "./routes/EducationAndCertifications";
 import Psychotherapy from "./routes/Psychotherapy";
 import YogaBanner from "./routes/YogaBanner";
-import Yoga from "./routes/Yoga";
 import PersonalStatement from "./routes/PersonalStatement";
 import { WLHeaderV2, WLTextV2 } from "./libraries/Web-Legos/components/Text";
+import { useContext } from "react";
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
+export const CurrentSignInContext = createContext();
 
 /** Site specific permissions */
 const permissions = new WLPermissionsConfig();
@@ -43,22 +46,31 @@ analyticsManager.initialize();
 
 export function App(props) {
 
+  const [currentSignIn, setCurrentSignIn] = useState(null)
+
   /** Whether this is a testing environment */
   const isTestingEnvironment = props.isTestingEnvironment;
 
   /** Provider for all app contexts */
   function AppContextProvider(props) {
     return (
-      <AuthenticationManager.Context.Provider value={{AuthenticationManager}} >
-      <AnalyticsManager.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
+      <CurrentSignInContext.Provider value={{currentSignIn}} >
         {props.children}
+      </CurrentSignInContext.Provider>
       </TestingContext.Provider>
-      </AnalyticsManager.Context.Provider>
-      </AuthenticationManager.Context.Provider >
     )
   }
 
+  analyticsManager.logPageView("home")
+
+  const [userCanEditText, setUserCanEditText] = useState(false);
+  const [userCanEditImages, setUserCanEditImages] = useState(false);
+
+  useEffect(() => {
+    authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
+    authenticationManager.getPermission(currentSignIn, "siteImages").then(p => setUserCanEditImages(p));
+  }, [currentSignIn]);
 
   // If we're testing, just place everything in context provider
   if (props.children) {
@@ -197,12 +209,11 @@ export function App(props) {
         }}
       >
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
-        <LandingPage />
-        <EducationAndCertifications />
-        <Psychotherapy />
-        <YogaBanner />
-        {/* <Yoga /> */}
-        <PersonalStatement />
+        <LandingPage userCanEditText={userCanEditText} />
+        <EducationAndCertifications userCanEditText={userCanEditText} userCanEditImages={userCanEditImages} />
+        <Psychotherapy userCanEditText={userCanEditText}/>
+        <YogaBanner userCanEditText={userCanEditText} />
+        <PersonalStatement userCanEditText={userCanEditText}/>
       </main>
       <footer id="contact" className="p-5 flex-column align-items-center justify-content-center">
         <div className="d-lg-none d-flex align-items-center justify-content-center">
@@ -224,9 +235,7 @@ export function App(props) {
           <Link href="https://www.joed.dev">
             <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Web Designer: Joe Dobbelaar</Text>
           </Link>
-          <Link href="">
-            <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Admin Login</Text>
-          </Link>
+          <FooterAuthButton link color="#8C8C8C" authManager={authenticationManager} currentSignIn={currentSignIn} setCurrentSignIn={setCurrentSignIn}/>
         </div>
         <div className="d-flex d-lg-none flex-row gap-2 align-items-center justify-content-center">
           <Link href="https://www.joed.dev">
@@ -234,9 +243,7 @@ export function App(props) {
           </Link>
         </div>
         <div className="d-flex d-lg-none flex-row gap-2 align-items-center justify-content-center">
-          <Link href="">
-            <Text color="#8C8C8C" css={{textDecoration:"underline"}}>Admin Login</Text>
-          </Link>
+          <FooterAuthButton link color="#8C8C8C" authManager={authenticationManager} currentSignIn={currentSignIn} setCurrentSignIn={setCurrentSignIn}/>
         </div>
       </footer>
     </AppContextProvider>

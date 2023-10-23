@@ -1,25 +1,15 @@
-import { Text, Button, Spacer } from '@nextui-org/react'
+import { Text } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
 
-import {WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
-import {WaveTop} from "../libraries/Web-Legos/components/Waves"
+import { WLHeaderV2, WLTextV2 } from "../libraries/Web-Legos/components/Text"
+import { Swoosh } from "../libraries/Web-Legos/components/Waves"
 
 import "../assets/style/psychotherapy.css";
-import wave from "../assets/images/grayWaveTop.svg"
 import chair from "../assets/images/chair.png"
-import brain from "../assets/images/brain.svg"
-import meditation from "../assets/images/meditation.svg"
-import heart from "../assets/images/heart.svg"
-import waveWhite from "../assets/images/whiteWaveTop.svg"
 
-import cert from "../assets/images/cert.svg"
 import { TreatmentItem } from '../api/siteModels.ts';
 
-const paragraph1 = "Nicole graduated in 1997 with a Masters in Social Work from the University of Pennsylvania. Since that time, she has been working as a psychotherapist helping people with a variety of issues including anxiety and depression."
-const paragraph2 = "With over 20 years of experience, she provides compassionate support and practical feedback to help clients effectively address personal life challenges. With compassion and understanding, she works with each individual to help them build on their strengths and attain their goals."
-const paragraph = `${paragraph1} ${paragraph2}`
-
-export default function Psychotherapy() {
+export default function Psychotherapy({userCanEditText}) {
 
   const [treatments, setTreatments] = useState([])
 
@@ -27,43 +17,29 @@ export default function Psychotherapy() {
     setTreatments([TreatmentItem.examples().anxiety, TreatmentItem.examples().depression, TreatmentItem.examples().trauma, TreatmentItem.examples().grief, TreatmentItem.examples().relationships, TreatmentItem.examples().stress, TreatmentItem.examples().chronic, TreatmentItem.examples().work, TreatmentItem.examples().transitions])
   }, [])
   
+  const PsychotherapyBodyText = ({indent}) => (
+    <WLTextV2 color="#8C8C8C" indent={indent} align="left" firestoreId="psychotherapy-body-text" editable={userCanEditText}/>
+  )
+
+  const PsychotherapyHeader = ({className, align}) => (
+    <WLHeaderV2 className={className} b align={align} firestoreId="psychotherapy-header" editable={userCanEditText}/>
+  )
+
   const TextInline = () => (
     <div className="container d-lg-block d-none" style={{padding: 0}}>
       <div className="row d-flex flex-row align-items-center justify-content-center">
         <div className="col-12">
-          <WLTextV2 color="#8C8C8C" align="left">
-            {paragraph}
-          </WLTextV2>
+          <PsychotherapyBodyText />
         </div>
-        {/* <div className="col-6">
-          <WLTextV2 color="#8C8C8C" align="left">
-            {paragraph2}
-          </WLTextV2>
-        </div> */}
       </div>
     </div>
   )
 
   const TextVertical = () => (
     <div className="d-flex d-lg-none flex-column align-items-center justify-content-center"s>
-      <WLTextV2 color="#8C8C8C" indent align="left">
-        {paragraph}
-      </WLTextV2>
-      {/* <WLTextV2 color="#8C8C8C" align="left">
-        {paragraph2}
-      </WLTextV2> */}
+      <PsychotherapyBodyText />
     </div>
   )
-
-  const HeaderInline =() => [
-    <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" b align="left" >Psychotherapy</WLHeaderV2>
-    // <WLHeaderV2 className="psychotherapy-header d-none d-lg-block" h2 align="left" color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
-  ]
-
-  const HeaderVertical = () => [
-    <WLHeaderV2 className="psychotherapy-header d-lg-none" b >Psychotherapy</WLHeaderV2>
-    // <WLHeaderV2 className="psychotherapy-header d-lg-none " h2 color="#5F5A67" size="$lg">Psychotherapy psychotherapy psychotherapy</WLHeaderV2>
-  ]
 
   const Treatment = ({t}) => (
     <div className="col-12 col-md-6 col-lg-4 treatment">
@@ -75,8 +51,8 @@ export default function Psychotherapy() {
     <section id="psychotherapy" className="row w-100 card-top p-2">
       <div className="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start py-2">
         <hgroup className="w-100 d-flex flex-column align-items-center align-items-md-start">
-          <HeaderInline />
-          <HeaderVertical />
+          <PsychotherapyHeader className="psychotherapy-header d-none d-lg-block" align="left" />
+          <PsychotherapyHeader className="psychotherapy-header d-lg-none" />
         </hgroup>
         <TextInline />
         <TextVertical />
@@ -84,7 +60,7 @@ export default function Psychotherapy() {
       <div className="col-12 col-lg-4 d-flex flex-column align-items-center justify-content-center">
         <img src={chair} alt="chair" className="chair" />
       </div>
-      <WLHeaderV2 h2 className="treatments-header">Treatment Specializations</WLHeaderV2>
+      <WLHeaderV2 h2 className="treatments-header" firestoreId="treatment-specializations-header" editable={userCanEditText}/>
       <div className="container">
         <ul className="row">
           {treatments.map((t, i) => <Treatment key={i} t={t}/>)}
@@ -97,22 +73,12 @@ export default function Psychotherapy() {
     <div className="row w-100 card-bottom px-2" >
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
         <div className="line-right px-4 d-flex flex-column align-items-center h-100 gap-2">
-          <Text b color="#E6E6E6">
-            PA Licensed Clinical Social Worker
-          </Text>
-          <WLTextV2 color="#E6E6E6">
-            Nicole is a PA Licensed Clinical Social Worker, bringing a wealth of expertise and dedication to her practice. Her licensure stands as a testament to her commitment to professional excellence and compassionate care.
-          </WLTextV2>
+          <WLTextV2 color="#E6E6E6" firestoreId="social-worker-body" editable={userCanEditText} />
         </div>
       </div>
       <div className="col-12 col-lg-6 py-3 d-flex flex-column align-items-center justify-content-center" style={{padding: 0}}>
         <div className="px-4 d-flex flex-column align-items-center h-100 gap-2">
-          <Text b color="#E6E6E6">
-            Certified Gestalt Therapist
-          </Text>
-          <WLTextV2 color="#E6E6E6">
-            Nicole is a Certified Gestalt Therapist, blending deep understanding and skill to facilitate meaningful personal growth in her clients.
-          </WLTextV2>
+          <WLTextV2 color="#E6E6E6" firestoreId="gestalt-body" editable={userCanEditText}/>
         </div>
       </div>
     </div>
@@ -140,31 +106,9 @@ export default function Psychotherapy() {
     </div>
   )
 
-  const GrayWave = () => (
-    <div className='w-100 shadow-bottom' style={{transform: "scaleX(-1) scaleY(-1)", position: "absolute", top: -1, left: 0, width: "100vw"}}>
-      <svg width="100vw" viewBox="0 0 1456 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_3_60)">
-        <path d="M0 89.3088L80.8889 91.8052C161.778 94.3015 323.556 99.2941 485.333 96.3699C647.111 93.4812 808.889 82.6401 970.667 66.5923C1132.44 50.5445 1294.22 29.2901 1375.11 18.6272L1456 8V105H1375.11C1294.22 105 1132.44 105 970.667 105C808.889 105 647.111 105 485.333 105C323.556 105 161.778 105 80.8889 105H0V89.3088Z" fill="#1E1E1E"/>
-        </g>
-        <defs>
-        <filter id="filter0_d_3_60" x="-4" y="0" width="1464" height="105" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="-4"/>
-        <feGaussianBlur stdDeviation="2"/>
-        <feComposite in2="hardAlpha" operator="out"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_60"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_60" result="shape"/>
-        </filter>
-        </defs>
-      </svg>
-    </div>
-  )
-
   return (
     <section className="psychotherapy-container px-2 px-sm-5">
-      <GrayWave />
+      <Swoosh flipX flipY className="shadow-bottom" style={{position: "absolute", top: -1, left: 0}} color="#1E1E1E" />
       <div className="container-fluid d-flex flex-column align-items-center justify-content-center psychotherapy-card-container">
         <WhiteSection />
         <GraySection />

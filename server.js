@@ -4,7 +4,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const fs = require('fs');
 const siteImages = require('./libraries/Server-Legos/siteImages');
-const siteText = require('./libraries/Server-Legos/siteText');
+const SiteTextManager = require('./libraries/Server-Legos/siteTextV2');
+const SiteAuthenticationManager = require('./libraries/Server-Legos/siteAuthV2');
 const siteModels = require('./libraries/Server-Legos/siteModels');
 const siteRules = require('./libraries/Server-Legos/siteRules');
 const fileUpload = require('express-fileupload');
@@ -31,8 +32,16 @@ app.use(express.static(__dirname + "/static/"));
 app.use(bodyParser.json({ limit: "50mb"}));
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb"}));
 
-// Server site text
-app.use("/site-text", siteText);
+// Server site text;
+const siteTextManager = new SiteTextManager("NL");
+const siteTextRouter = siteTextManager.getRouter();
+app.use("/site-text", siteTextRouter);
+
+// Server site authentication
+const siteAuthenticationManager = new SiteAuthenticationManager(process.env.NLUSERKEY, "NL");
+const siteAuthenticationRouter = siteAuthenticationManager.getRouter();
+app.use("/site-auth", siteAuthenticationRouter);
+
 // Server site images
 app.use("/site-images", siteImages);
 // Server site models
