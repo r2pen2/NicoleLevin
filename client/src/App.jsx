@@ -28,6 +28,8 @@ import YogaBanner from "./routes/YogaBanner";
 import PersonalStatement from "./routes/PersonalStatement";
 import { WLHeaderV2, WLTextV2 } from "./libraries/Web-Legos/components/Text";
 import { useContext } from "react";
+import { ModelEditModal } from "./libraries/Web-Legos/components/Modals";
+import { SiteModel } from "./libraries/Web-Legos/api/models.ts";
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -71,6 +73,9 @@ export function App(props) {
     authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
     authenticationManager.getPermission(currentSignIn, "siteImages").then(p => setUserCanEditImages(p));
   }, [currentSignIn]);
+
+  const [currentModel, setCurrentModel] = useState(new SiteModel());
+  const [modelEditModalOpen, setModelEditModalOpen] = useState(false);
 
   // If we're testing, just place everything in context provider
   if (props.children) {
@@ -208,12 +213,28 @@ export function App(props) {
           "--textBg": `${lavender600}33`,
         }}
       >
+        <ModelEditModal open={modelEditModalOpen} setOpen={setModelEditModalOpen} model={currentModel} />
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
-        <LandingPage userCanEditText={userCanEditText} />
-        <EducationAndCertifications userCanEditText={userCanEditText} userCanEditImages={userCanEditImages} />
-        <Psychotherapy userCanEditText={userCanEditText}/>
-        <YogaBanner userCanEditText={userCanEditText} />
-        <PersonalStatement userCanEditText={userCanEditText}/>
+        <LandingPage 
+          userCanEditText={userCanEditText} 
+        />
+        <EducationAndCertifications 
+          userCanEditText={userCanEditText} 
+          userCanEditImages={userCanEditImages} 
+        />
+        <Psychotherapy 
+          userCanEditText={userCanEditText} 
+          modelEditModalOpen={modelEditModalOpen} 
+          setModelEditModalOpen={setModelEditModalOpen} 
+          currentModel={currentModel} 
+          setCurrentModel={setCurrentModel} 
+        />
+        <YogaBanner 
+          userCanEditText={userCanEditText}
+        />
+        <PersonalStatement 
+          userCanEditText={userCanEditText}
+        />
       </main>
       <footer id="contact" className="p-5 flex-column align-items-center justify-content-center">
         <div className="d-lg-none d-flex align-items-center justify-content-center">

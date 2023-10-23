@@ -20,7 +20,7 @@ const headerColor = "#291250";
 
 const Updates = () => (
   <div className="d-flex flex-column align-items-center justify-content-center gap-2">
-    <Alert severity="info">Last updated 10/22 @ 7:45pm: Headers should be looking good now. I'll send you an email with login instructions on 10/23.</Alert>
+    <Alert severity="info">Last updated 10/23 @ 5:30pm: Site is editable! Check your email for instructions.</Alert>
   </div>
 )
 

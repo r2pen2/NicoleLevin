@@ -6,7 +6,7 @@ const fs = require('fs');
 const SiteImageManager = require('./libraries/Server-Legos/siteImagesV2');
 const SiteTextManager = require('./libraries/Server-Legos/siteTextV2');
 const SiteAuthenticationManager = require('./libraries/Server-Legos/siteAuthV2');
-const siteModels = require('./libraries/Server-Legos/siteModels');
+const SiteModelManager = require('./libraries/Server-Legos/siteModelsV2');
 const siteRules = require('./libraries/Server-Legos/siteRules');
 const fileUpload = require('express-fileupload');
 
@@ -46,6 +46,11 @@ app.use("/site-auth", siteAuthenticationRouter);
 const siteImageManager = new SiteImageManager("NL");
 const siteImageRouter = siteImageManager.getRouter();
 app.use("/site-images", siteImageRouter);
+
+// Server site models
+const siteModelManager = new SiteModelManager("NL");
+const siteModelRouter = siteModelManager.getRouter();
+app.use("/site-models", siteModelRouter);
 
 // Server site models
 app.use("/site-rules", siteRules);

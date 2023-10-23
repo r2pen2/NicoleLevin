@@ -9,12 +9,15 @@ import chair from "../assets/images/chair.png"
 
 import { TreatmentItem } from '../api/siteModels.ts';
 
-export default function Psychotherapy({userCanEditText}) {
+import {AddModelButton, ModelEditButton} from "../libraries/Web-Legos/components/Modals"
+
+
+export default function Psychotherapy({userCanEditText, modelEditModalOpen, setModelEditModalOpen, currentModel, setCurrentModel}) {
 
   const [treatments, setTreatments] = useState([])
 
   useEffect(() => {
-    setTreatments([TreatmentItem.examples().anxiety, TreatmentItem.examples().depression, TreatmentItem.examples().trauma, TreatmentItem.examples().grief, TreatmentItem.examples().relationships, TreatmentItem.examples().stress, TreatmentItem.examples().chronic, TreatmentItem.examples().work, TreatmentItem.examples().transitions])
+    TreatmentItem.getAndSet(setTreatments);
   }, [])
   
   const PsychotherapyBodyText = ({indent}) => (
@@ -41,9 +44,10 @@ export default function Psychotherapy({userCanEditText}) {
     </div>
   )
 
-  const Treatment = ({t}) => (
-    <div className="col-12 col-md-6 col-lg-4 treatment">
+  const Treatment = ({t, editable}) => (
+    <div className="col-12 col-md-6 col-lg-4 treatment d-flex flex-column align-items-center justify-content-center">
       <Text>{t.title}</Text>
+      <ModelEditButton setCurrentModel={setCurrentModel} setEditModalOpen={setModelEditModalOpen} data={t} userCanEdit={userCanEditText} model={TreatmentItem}/>
     </div>
   )
 
@@ -61,10 +65,11 @@ export default function Psychotherapy({userCanEditText}) {
         <img src={chair} alt="chair" className="chair" />
       </div>
       <WLHeaderV2 h2 className="treatments-header" firestoreId="treatment-specializations-header" editable={userCanEditText}/>
-      <div className="container">
+      <div className="container d-flex flex-column align-items-center">
         <ul className="row">
           {treatments.map((t, i) => <Treatment key={i} t={t}/>)}
         </ul>
+        <AddModelButton model={TreatmentItem} userCanEdit={userCanEditText} setCurrentModel={setCurrentModel} setEditModalOpen={setModelEditModalOpen}  />
       </div>
     </section>
   )
