@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const fs = require('fs');
-const siteImages = require('./libraries/Server-Legos/siteImages');
+const SiteImageManager = require('./libraries/Server-Legos/siteImagesV2');
 const SiteTextManager = require('./libraries/Server-Legos/siteTextV2');
 const SiteAuthenticationManager = require('./libraries/Server-Legos/siteAuthV2');
 const siteModels = require('./libraries/Server-Legos/siteModels');
@@ -43,13 +43,20 @@ const siteAuthenticationRouter = siteAuthenticationManager.getRouter();
 app.use("/site-auth", siteAuthenticationRouter);
 
 // Server site images
-app.use("/site-images", siteImages);
+const siteImageManager = new SiteImageManager("NL");
+const siteImageRouter = siteImageManager.getRouter();
+app.use("/site-images", siteImageRouter);
+
 // Server site models
 app.use("/site-rules", siteRules);
 
+app.get("/images/*", (req, res) => {
+    res.sendFile(__dirname +  "/static" + req._parsedOriginalUrl.path);
+})
+
 // Allow post to /images, placing an image in the static folder
 app.post("/images/*", (req, res) => {
-    const targetPath = __dirname + "static/" + req._parsedUrl.path;
+    const targetPath = __dirname + "/static" + req._parsedUrl.path;
     fs.writeFile(targetPath, req.files.file.data, (err) => {
         if (err) {
             console.log(err);

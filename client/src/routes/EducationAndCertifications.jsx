@@ -2,12 +2,13 @@ import { Text, Button, Spacer } from '@nextui-org/react'
 import React, { memo, useEffect, useState } from 'react'
 
 import {WLHeader, WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
+import {WLImage} from "../libraries/Web-Legos/components/Images"
 
 import "../assets/style/about.css";
 import nicole from "../assets/images/nicole.jpg"
 
 
-export default function EducationAndCertifications({userCanEditText}) {
+export default function EducationAndCertifications({userCanEditText, userCanEditImages}) {
 
   // Fetch text only once
   const AboutBodyText = ({align}) => <WLTextV2 align={align} color="white" firestoreId="about-body-text" editable={userCanEditText} />
@@ -18,7 +19,7 @@ export default function EducationAndCertifications({userCanEditText}) {
       <div className="container py-2">
         <div className="row d-flex flex-row align-items-center justify-content-center">
           <div className="col-xl-4 col-lg-12 col-12 d-flex flex-column justify-content-center align-items-center py-2">
-            <img src={nicole} alt="education-glyph" style={{maxHeight: 200, width: 200, objectFit:"cover", borderRadius: "50%"}} />
+            <WLImage editable={userCanEditImages} firestoreId="about" alt="education-glyph" imgCss={{maxHeight: 200, width: 200, aspectRatio: "1/1", objectFit:"cover", borderRadius: "50%"}} />
           </div>
           <div className="col-xl-8 col-12 d-xl-flex d-none flex-column align-items-start justify-content-center">
             <AboutHeader align="left" />
