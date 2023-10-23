@@ -44,8 +44,8 @@ export default function Psychotherapy({userCanEditText, modelEditModalOpen, setM
     </div>
   )
 
-  const Treatment = ({t, editable}) => (
-    <div className="col-12 col-md-6 col-lg-4 treatment d-flex flex-column align-items-center justify-content-center">
+  const Treatment = ({t}) => (
+    <div className="py-2 col-12 col-md-6 col-lg-4 treatment d-flex flex-column align-items-center justify-content-center">
       <Text>{t.title}</Text>
       <ModelEditButton setCurrentModel={setCurrentModel} setEditModalOpen={setModelEditModalOpen} data={t} userCanEdit={userCanEditText} model={TreatmentItem}/>
     </div>
