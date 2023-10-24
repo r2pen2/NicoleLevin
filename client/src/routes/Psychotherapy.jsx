@@ -91,7 +91,7 @@ export default function Psychotherapy({userCanEditText, modelEditModalOpen, setM
 
   const WhiteWave = () => (
     <div className='w-100 shadow-top' style={{position: "absolute", bottom: -1, left: 0, width: "100vw"}}>
-      <svg width="100vw" viewBox="0 0 1456 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100vw" display="block" viewBox="0 0 1456 95" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_2_260)">
         <path d="M-2 65L32.7764 60.3C67.6542 55.7 137.207 46.3 206.658 48.5C276.11 50.7 345.46 64.3 414.911 64C484.362 63.7 553.915 49.3 623.569 39.2C693.224 29 762.776 23 832.431 31.2C902.085 39.3 971.638 61.7 1041.09 64.3C1110.54 67 1179.89 50 1249.34 37.3C1318.79 24.7 1388.35 16.3 1423.22 12.2L1458 8V95H1423.22C1388.35 95 1318.79 95 1249.34 95C1179.89 95 1110.54 95 1041.09 95C971.638 95 902.085 95 832.431 95C762.776 95 693.224 95 623.569 95C553.915 95 484.362 95 414.911 95C345.46 95 276.11 95 206.658 95C137.207 95 67.6542 95 32.7764 95H-2V65Z" fill="white"/>
         </g>

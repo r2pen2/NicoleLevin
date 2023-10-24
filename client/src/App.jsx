@@ -87,6 +87,25 @@ export function App(props) {
     )
   }
 
+  const EducationText = ({align}) => (
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="education" />
+  )
+  const EducationHeader = ({align}) => (
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="education-header" />
+  )
+  const MembershipsText = ({align}) => (
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="memberships" />
+  )
+  const MembershipsHeader = ({align}) => (
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="memberships-header" />
+  )
+  const CertificationsText = ({align}) => (
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="certifications" />
+  )
+  const CertificationsHeader = ({align}) => (
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="certifications-header" />
+  )
+
   const FooterLeftLarge = () => (
     <div className="col-lg-6 d-none d-lg-flex flex-column aligh-items-center justify-content-center">
       <WLHeaderV2 size="$4xl" color="white" align="left">Nicole Levin LCSW CYT</WLHeaderV2>
@@ -157,44 +176,32 @@ export function App(props) {
   const FooterRightLarge = () => (
     <div className="col-lg-6 d-none d-lg-block">
       <div className="mb-1 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 color="white" align="right" size="$lg">Education:</WLHeaderV2>
-        <WLTextV2 color="#8c8c8c" align="right">
-          University of Pennsylvania MSW (1997) ・ Boston University BA in Psychology (1993)
-        </WLTextV2>
+        <EducationHeader align="right" />
+        <EducationText align="right" />
       </div>
       <div className="mb-1 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 color="white" align="right" size="$lg">Professional Memberships:</WLHeaderV2>
-        <WLTextV2 color="#8c8c8c" align="right">
-          Pennsylvania Society of Clinical Social Workers
-        </WLTextV2>
+        <MembershipsHeader align="right" />
+        <MembershipsText align="right" />
       </div>
       <div className="mb-1 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 color="white" align="right" size="$lg">Certifications:</WLHeaderV2>
-        <WLTextV2 color="#8c8c8c" align="right">
-          PA Licensed Clinical Social Worker ・ Gestalt Therapist ・ Yoga Teacher ・ Pilates Teacher ・ Group Motion Facilitator
-        </WLTextV2>
+        <CertificationsHeader align="right" />
+        <CertificationsText align="right" />
       </div>
     </div>
   )
   const FooterRightCentered = () => (
     <div className="d-lg-none d-flex flex-column align-items-center d-lg-none" style={{maxWidth: 600}}>
       <div className="mb-4 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 align="center" color="white" size="$lg">Education:</WLHeaderV2>
-        <WLTextV2 align="center" color="#8c8c8c">
-          University of Pennsylvania MSW (1997) ・ Boston University BA in Psychology (1993)
-        </WLTextV2>
+        <EducationHeader align="center" />
+        <EducationText align="center" />
       </div>
       <div className="mb-4 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 align="center" color="white" size="$lg">Professional Memberships:</WLHeaderV2>
-        <WLTextV2 align="center" color="#8c8c8c">
-          Pennsylvania Society of Clinical Social Workers
-        </WLTextV2>
+        <MembershipsHeader align="center" />
+        <MembershipsText align="center" />
       </div>
       <div className="mb-4 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 align="center" color="white" size="$lg">Certifications:</WLHeaderV2>
-        <WLTextV2 align="center" color="#8c8c8c">
-          PA Licensed Clinical Social Worker ・ Gestalt Therapist ・ Yoga Teacher ・ Pilates Teacher ・ Group Motion Facilitator
-        </WLTextV2>
+        <CertificationsHeader align="center" />
+        <CertificationsText align="center" />
       </div>
     </div>
   )

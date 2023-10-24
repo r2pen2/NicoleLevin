@@ -12,8 +12,10 @@ export default function PersonalStatement({userCanEditText}) {
       <div className="workshops-content px-4 px-md-5">
         <QuoteBlock outlineColor="white" color="#281250">
           <WLHeaderV2 firestoreId="personal-statement-header" editable={userCanEditText} />
-          <WLTextV2 color="#5F5A67" firestoreId="personal-statement" editable={userCanEditText} />
         </QuoteBlock>
+        <div className="d-flex flex-column align-items-center justify-content-center px-2" style={{width: "100%", maxWidth: 600}}>
+          <WLTextV2 color="#5F5A67" firestoreId="personal-statement" editable={userCanEditText} />
+        </div>
         <Spacer y={2} />
       </div>
       <Spacer y={2} />

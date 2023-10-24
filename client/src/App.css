@@ -4,7 +4,7 @@
   max-width: 100%;
   min-height: 100vh;
   background: var(--backgroundColor);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Tenali Ramakrishna', sans-serif;
 
   --textPurple: "#291250";
 }
@@ -41,11 +41,11 @@ ol li {
 footer {
   background: #1e1e1e;
   display: flex;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
 nav {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
 nav.custom {

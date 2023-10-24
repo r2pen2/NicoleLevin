@@ -25,7 +25,7 @@ export const nextUiTheme = createTheme({
     },
     space: {},
     fonts: {
-      sans: "Nunito"
+      sans: "Tenali Ramakrishna"
     },
     fontSizes: {
       xs: '0.75rem', 
