@@ -88,22 +88,22 @@ export function App(props) {
   }
 
   const EducationText = ({align}) => (
-    <WLTextV2 color="#8c8c8c" align={align} firestoreId="education" />
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="education" editable={userCanEditText} />
   )
   const EducationHeader = ({align}) => (
-    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="education-header" />
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="education-header" editable={userCanEditText} />
   )
   const MembershipsText = ({align}) => (
-    <WLTextV2 color="#8c8c8c" align={align} firestoreId="memberships" />
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="memberships" editable={userCanEditText} />
   )
   const MembershipsHeader = ({align}) => (
-    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="memberships-header" />
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="memberships-header" editable={userCanEditText} />
   )
   const CertificationsText = ({align}) => (
-    <WLTextV2 color="#8c8c8c" align={align} firestoreId="certifications" />
+    <WLTextV2 color="#8c8c8c" align={align} firestoreId="certifications" editable={userCanEditText} />
   )
   const CertificationsHeader = ({align}) => (
-    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="certifications-header" />
+    <WLHeaderV2 color="white" align={align} size="$lg" firestoreId="certifications-header" editable={userCanEditText} />
   )
 
   const FooterLeftLarge = () => (
