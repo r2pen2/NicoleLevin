@@ -82,7 +82,7 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#yoga-and-workshops"
+            href="#yoga-and-pilates"
           >
             Yoga, Pilates, & Dance
           </Link>
@@ -96,7 +96,7 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#yoga-and-workshops"
+            href="#workshops"
           >
             Gestalt Workshops
           </Link>
