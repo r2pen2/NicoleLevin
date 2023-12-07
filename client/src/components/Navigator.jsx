@@ -27,12 +27,12 @@ export default function Navigator() {
           Psychotherapy
         </Text>
       </Link>
-      <Link href="#yoga-and-pilates">
+      <Link href="#yoga-and-workshops">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
           Yoga, Pilates, & Dance
         </Text>
       </Link>
-      <Link href="#workshops">
+      <Link href="#yoga-and-workshops">
         <Text size="$lg" color="#291250" style={{margin: 0}}>
           Gestalt Workshops
         </Text>
@@ -82,7 +82,7 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#yoga-and-pilates"
+            href="#yoga-and-workshops"
           >
             Yoga, Pilates, & Dance
           </Link>
@@ -96,7 +96,7 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#workshops"
+            href="#yoga-and-workshops"
           >
             Gestalt Workshops
           </Link>

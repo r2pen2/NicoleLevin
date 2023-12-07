@@ -23,7 +23,7 @@ export default function YogaBanner({userCanEditText}) {
   )
 
   return (
-    <section className="w-100 yoga-container d-flex flex-column align-items-center justify-content-center py-2" style={{zIndex: 2}}>
+    <section className="w-100 yoga-container d-flex flex-column align-items-center justify-content-center py-2" id="yoga-and-workshops" style={{zIndex: 2}}>
       <div className={`w-100`}>
         <div className="wl-glyph-section-two-items-no-actions d-none d-lg-flex wl-gap-3">
           <Left />
