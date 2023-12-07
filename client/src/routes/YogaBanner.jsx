@@ -7,7 +7,7 @@ import glyph from "../assets/images/flower.png"
 export default function YogaBanner({userCanEditText}) {
   
   const Left = () => (
-    <section id="yoga-and-pilates" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
+    <section className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
       <WLHeaderV2 h2 firestoreId="yoga-header" editable={userCanEditText} />
       <WLTextV2 firestoreId="yoga-body" editable={userCanEditText}>
         
@@ -16,7 +16,7 @@ export default function YogaBanner({userCanEditText}) {
   )
   
   const Right = () => (
-    <section id="workshops" className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
+    <section className="d-flex flex-column align-items-center justify-content-center py-2" style={{maxWidth: 650}}>
       <WLHeaderV2 h2 firestoreId="gestalt-workshops-header" editable={userCanEditText}/>
       <WLTextV2 firestoreId="gestalt-workshops-body" editable={userCanEditText}/>
     </section>
@@ -35,8 +35,8 @@ export default function YogaBanner({userCanEditText}) {
         <div className="wl-glyph-section-two-items-no-actions d-flex d-lg-none">
           <div className="wl-glyph-section-two-items-no-actions-md-container container-fluid">
             <div className="row">
-              <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center"><Left /></div>
-              <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center"><Right /></div>
+              <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center" id="yoga-and-pilates"><Left /></div>
+              <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center" id="workshops"><Right /></div>
             </div>
           </div>
           <div className="wl-glyph-section-two-items-no-actions-glyph-container">
