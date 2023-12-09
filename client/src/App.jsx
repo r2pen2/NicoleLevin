@@ -243,7 +243,7 @@ export function App(props) {
           userCanEditText={userCanEditText}
         />
       </main>
-      <footer id="contact" className="p-5 flex-column align-items-center justify-content-center">
+      <footer className="p-5 flex-column align-items-center justify-content-center">
         <div className="d-lg-none d-flex align-items-center justify-content-center">
           <WLHeaderV2 size="$4xl" color="white" align="center">Nicole Levin LCSW CYT</WLHeaderV2>
         </div>
@@ -251,6 +251,7 @@ export function App(props) {
         <div className="d-lg-none d-flex">
           <Spacer y={1}/>
         </div>
+        <div id="contact" />
         <FooterLeftCentered />
         <div className="row w-100 d-none d-lg-flex">
           <FooterLeftLarge />

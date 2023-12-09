@@ -110,9 +110,9 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#contact"
+            href="#personal-statement"
           >
-            Contact
+            Personal Statement
           </Link>
         </NextUINavbar.CollapseItem>
         <NextUINavbar.CollapseItem
@@ -124,9 +124,9 @@ export default function Navigator() {
               minWidth: "100%",
               paddingLeft: "1rem"
             }}
-            href="#personal-statement"
+            href="#contact"
           >
-            Personal Statement
+            Contact
           </Link>
         </NextUINavbar.CollapseItem>
       </NextUINavbar.Collapse>
