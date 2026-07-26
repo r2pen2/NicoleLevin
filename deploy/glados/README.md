@@ -19,8 +19,10 @@ mkdir -p /opt/services/data/app-assets/nicole-levin/static
 rsync -a root@45.63.18.108:/root/NicoleLevin/static/ /opt/services/data/app-assets/nicole-levin/static/
 ```
 
-Start or update the service:
+Start or update the service from the GHCR image:
 
 ```bash
-docker compose -f deploy/glados/compose.yml up -d --build
+/opt/services/bin/deploy-app nicole-levin
 ```
+
+GitHub Actions publishes `ghcr.io/r2pen2/nicolelevin:latest`. Watchtower on glados can then pull and restart this service automatically when the image changes.
