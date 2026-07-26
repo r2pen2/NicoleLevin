@@ -70,9 +70,13 @@ export function App(props) {
   const [userCanEditImages, setUserCanEditImages] = useState(false);
 
   useEffect(() => {
+    if (isTestingEnvironment) {
+      return;
+    }
+
     authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
     authenticationManager.getPermission(currentSignIn, "siteImages").then(p => setUserCanEditImages(p));
-  }, [currentSignIn]);
+  }, [currentSignIn, isTestingEnvironment]);
 
   const [currentModel, setCurrentModel] = useState(new SiteModel());
   const [modelEditModalOpen, setModelEditModalOpen] = useState(false);
