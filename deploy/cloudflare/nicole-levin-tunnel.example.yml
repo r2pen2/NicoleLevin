@@ -1,0 +1,9 @@
+# Example cloudflared ingress entries for the shared glados tunnel.
+# Route both hostnames to the internal reverse proxy container.
+
+ingress:
+  - hostname: nicolelevin.org
+    service: http://traefik:80
+  - hostname: www.nicolelevin.org
+    service: http://traefik:80
+  - service: http_status:404
